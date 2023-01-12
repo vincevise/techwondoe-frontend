@@ -1,3 +1,5 @@
+<a> <img src="https://cdn-icons-png.flaticon.com/512/54/54476.png" width="40"  />  </a> <a href="https://github.com/vincevise/E-commerce"> <img src="https://cdn-icons-png.flaticon.com/512/1251/1251009.png" width="40"/> </a>
+
 # Techwondoe-frontend-first-round
 
 <a href="https://techwondoe-first-round-users-table.netlify.app/">DEMO</a>
