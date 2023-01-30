@@ -16,6 +16,7 @@ deployed on https://techwondoe-first-round-users-table.netlify.app/
 
 ### packages used :
 <a href="https://react-query-v3.tanstack.com/">React-query</a> for handling asynchronous API request
+<br/>
 <a href="https://tailwindcss.com/docs/installation">Tailwind CSS</a> for styling
 <br/>
 <a href="https://react-table-v7.tanstack.com/">react-table</a> for creating the Table
