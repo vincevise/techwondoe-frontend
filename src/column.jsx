@@ -1,7 +1,7 @@
 import {format} from 'date-fns'
 import { Cell } from 'react-table'
-import ActiveBadge from './src/components/ActiveBadge'
-import InvitedBadge from './src/components/InvitedBadge'
+import ActiveBadge from './components/ActiveBadge'
+import InvitedBadge from './components/InvitedBadge'
  
 
 export const COLUMNS = [ 

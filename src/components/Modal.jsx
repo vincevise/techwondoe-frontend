@@ -31,14 +31,14 @@ const Modal = ({ data, setModal }) => {
   const handleDelete = (e) => {
     e.preventDefault()
     deleteUserMutation.mutate(data)
-    // setModal(false)
+    setModal(false)
 
   }
 
   const handleUpdate = (e) => {
     e.preventDefault()
     updateUserMutation.mutate(input)
-    // setModal(false)
+    setModal(false)
   }
 
  
@@ -53,7 +53,7 @@ const Modal = ({ data, setModal }) => {
             <img
               src={data.photo}
               alt=""
-              className="w-36   rounded-full"
+              className="w-36 rounded-full"
             />
           </div>
           <div className=" [&_span]:px-2 [&_span]:py-1"> 
@@ -65,7 +65,7 @@ const Modal = ({ data, setModal }) => {
                 name="first_name" 
                 value={input.first_name}
                 disabled={data.action==='delete' ? true : false }
-                className='bg-white px-2'
+                className={`bg-white px-2  border ${data.action ==='delete' ? '' : 'border-slate-600'} rounded-md`}
                 onChange={(e)=>setInput({...input,[e.target.name]:e.target.value})}
                 /> 
               
@@ -78,7 +78,7 @@ const Modal = ({ data, setModal }) => {
                 name="last_name" 
                 value={input.last_name}
                 disabled={data.action==='delete' ? true : false }
-                className='bg-white px-2'
+                className={`bg-white px-2  border ${data.action ==='delete' ? '' : 'border-slate-600'} rounded-md`}
                 onChange={(e)=>setInput({...input,[e.target.name]:e.target.value})}
               /> 
               
@@ -98,7 +98,7 @@ const Modal = ({ data, setModal }) => {
                 name="role" 
                 value={input.role}
                 disabled={data.action==='delete' ? true : false }
-                className='bg-white px-2'
+                className={`bg-white px-2  border ${data.action ==='delete' ? '' : 'border-slate-600'} rounded-md`}
                 onChange={(e)=>setInput({...input,[e.target.name]:e.target.value})}
               /> 
             </div>
