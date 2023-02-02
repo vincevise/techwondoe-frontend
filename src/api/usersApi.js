@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseURL = 'http://localhost:3023/users'
-// const baseURL = 'https://sore-rose-cormorant-cape.cyclic.app/users'
+// const baseURL = 'http://localhost:3023/users'
+const baseURL = 'https://sore-rose-cormorant-cape.cyclic.app/users'
 
 export const getUser = async() => {
     const response = await axios.get(`${baseURL}`)
