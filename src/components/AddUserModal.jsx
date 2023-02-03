@@ -7,12 +7,16 @@ import { useMutation, useQueryClient } from 'react-query';
 import { createUser } from '../api/usersApi';
 
 
-const AddUserModal = ({setModal}) => {
+const AddUserModal = ({setModal,setOnMutation}) => {
     const queryClient = useQueryClient()
 
     const createUserMutation = useMutation(createUser,{
         onSuccess:()=>{
           queryClient.invalidateQueries('users')
+          setOnMutation(4)
+        },
+        onError:(error)=>{
+            if(error.response.data.split(" ")[1] === 'EROFS:')setOnMutation(6)
         }
       })
 

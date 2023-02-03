@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { deleteUser, updateUser } from "../api/usersApi";
+import { mutationContext } from "../App";
 import ActiveBadge from "./ActiveBadge";
 import InvitedBadge from "./InvitedBadge";
 
 const Modal = ({ data, setModal }) => {
-  console.log(data.action);
+  const {onMutation,setOnMutation} = useContext(mutationContext)
+
+ 
   const queryClient = useQueryClient()
 
   const [input,setInput] = useState({
@@ -19,12 +22,20 @@ const Modal = ({ data, setModal }) => {
   const updateUserMutation = useMutation(updateUser,{
     onSuccess:()=>{
       queryClient.invalidateQueries('users')
+      setOnMutation(onMutation + 1)
+    },
+    onError:(error)=>{
+      if(error.response.data.split(" ")[1] === 'EROFS:') setOnMutation(onMutation + 1)
     }
   })
 
   const deleteUserMutation = useMutation(deleteUser,{
     onSuccess:()=>{
       queryClient.invalidateQueries('users')
+      setOnMutation(onMutation + 1)
+    },
+    onError:(error)=>{
+      if(error.response.data.split(" ")[1] === 'EROFS:') setOnMutation(onMutation + 1)
     }
   })
 
