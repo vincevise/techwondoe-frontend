@@ -2,7 +2,7 @@
 
 # Techwondoe-frontend-first-round
 
-<a href="https://techwondoe-first-round-users-table.netlify.app/">DEMO</a>
+application link: https://techwondoe-first-round-users-table.netlify.app
 
 ![Screenshot (215)](https://user-images.githubusercontent.com/88813613/211210030-4133c22b-6805-4716-babc-aee532cc35bb.png)
 
